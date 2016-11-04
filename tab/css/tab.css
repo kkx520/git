@@ -1,0 +1,37 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, legend, input, button, th, td, textarea { margin: 0; padding: 0; }
+
+body, button, input, select, textarea { font: 12px/1.5 tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif; }
+
+h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-size: 100%; }
+
+ol, ul { list-style: none; }
+
+a { text-decoration: none; }
+
+fieldset, img { border: 0; display: block; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+.cf:after { content: ""; display: table; clear: both; }
+
+.cf { *zoom: 1; }
+
+.br { border-right: none !important; }
+
+* { transition: background-color 0.5s; }
+
+h2 { text-align: center; }
+
+.tab { width: 400px; margin: 50px auto; }
+
+.tab .tab-btn { height: 30px; line-height: 30px; }
+
+.tab .tab-btn .btn { float: left; width: 100px; background: #F1FAFA; text-align: center; cursor: pointer; }
+
+.tab .tab-btn .active { background: #8080C0; }
+
+.tab .tab-panel .panel { display: none; width: 400px; height: 200px; background: #F0DAD2; }
+
+.tab .tab-panel .db { display: block !important; }
+
+.tab .tab-panel .dn { display: none !important; }
