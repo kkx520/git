@@ -1,0 +1,45 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, legend, input, button, th, td, textarea { margin: 0; padding: 0; }
+
+body, button, input, select, textarea { font: 12px/1.5 tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif; }
+
+h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-size: 100%; }
+
+ol, ul { list-style: none; }
+
+a { text-decoration: none; }
+
+fieldset, img { border: 0; display: block; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+.cf:after { content: ""; display: table; clear: both; }
+
+.cf { *zoom: 1; }
+
+.br { border-right: none !important; }
+
+* { transition: background-color 0.5s; }
+
+.banner { width: 100%; overflow: hidden; position: relative; }
+
+.banner .img-list { position: relative; height: 480px; }
+
+.banner .img-list .show { display: block; opacity: 1; }
+
+.banner .img-list li { display: none; position: absolute; }
+
+.banner .img-list li a { display: block; }
+
+.banner .img-list li a img { width: 100%; height: auto; }
+
+.banner .btn-list { width: 200px; position: absolute; left: 0; top: 0; bottom: 0; right: 0; margin: 450px  auto; }
+
+.banner .btn-list .btn-item { opacity: 1; }
+
+.banner .btn-list li { cursor: pointer; width: 20px; height: 20px; background: #000; opacity: 0.5; margin: 0 10px; border-radius: 50%; float: left; text-align: center; line-height: 20px; color: #fff; }
+
+.banner .preNext li { width: 50px; height: 100px; line-height: 100px; background: #333; opacity: 0.5; color: #fff; font-size: 30px; text-align: center; cursor: pointer; top: 50%; margin-top: -50px; }
+
+.banner .preNext .pre { position: absolute; left: 30px; }
+
+.banner .preNext .next { position: absolute; right: 30px; }
