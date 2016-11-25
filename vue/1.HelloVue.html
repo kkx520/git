@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/pl-ui.min.css">
+	<style>
+	*{ font-size: 20px; color: #fff;  }
+	input { color:#000; }
+	#app{ position: absolute; left: 0; top:0; right: 0; bottom:0; width:800px; height: 300px; margin:auto;  }
+	div{ margin: 20px 0; }
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p>{{ message }}</p>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>	
+	<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			message:"Hellow Word"
+		}
+	})
+	</script>
+</body>
+</html>

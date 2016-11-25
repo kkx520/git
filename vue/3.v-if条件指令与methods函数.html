@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/pl-ui.min.css">
+	<style>
+	*{ font-size: 20px; color: #fff;  }
+	input { color:#000; }
+	#app{ position: absolute; left: 0; top:0; right: 0; bottom:0; width:500px; height: 500px; margin:auto;  }
+	div{ margin: 10px 0; }
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div v-if="see">点击隐藏我或者显示我</div>
+		<div><button :class="message" v-on:click="boo">点击</button></div>	
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>	
+	<script type="text/javascript">
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"btn btn-primary",
+			see: true
+		},
+		methods: {
+			boo: function(){
+				this.see = this.see ? false : true
+			}
+		}
+	})
+	</script>
+</body>
+</html>

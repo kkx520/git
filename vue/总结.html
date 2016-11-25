@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue组件1</title>
+	<link rel="stylesheet" href="css/pl-ui.min.css">
+	<style>
+	*{ color:#fff; font-size: 20px; }
+	input{ color: #000; width: 1000px; }
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p  :class="attr">{{ message  }} <input v-model="message"></p>
+		<p>{{ reMessage }} ----- 计算属性的使用</p>
+		<button v-bind:class="btnClassName" @click="reverseMessage" >{{ btnName }}</button>
+		<hello></hello>
+		<div>{{ number + 1 }}</div>
+		<button class="btn btn-primary" v-on:click="add">点击加1</button>
+		<p >{{ message2 | capitalze("aaaaaaaa","bbbbbbb") }}过滤器的使用</p>
+		<p>{{ now }}</p>
+		<ul>
+			<data-List v-for="items in list" v-bind:item="items"></data-List>
+		</ul>
+		<ul>
+			<data-List2 v-for="item in list2" v-bind:item="item"></data-List2>
+		</ul>
+		<ul>
+			<data-List3 v-for="item in list3" v-bind:a="item"></data-List3>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript">
+	Vue.component('hello',{
+		template:'<p>我是一个自定义的全局组件</p>'
+	})
+	Vue.component('dataList',{
+		props:['item'],
+		template: '<li>{{ item.name }}</li>'
+	})
+	Vue.component('dataList2',{
+		props:['item'],
+		template: '<li>{{ item.name }}</li>'
+	})
+	Vue.component('dataList3',{
+		props:['a'],
+		template:'<li>{{ a.name }}</li>'
+	})
+	var data = {
+		fullName: "Foo Bar",
+		firstName: "Foo",
+		lastName: "Bar",
+		message:"模板语法将数据message渲染到DOM节点span的文本节点中",
+		message2: "abcdefghijk",
+		attr: "将数据attr绑定到dom元素的class属性中",
+		btnName: "点击！！！字符窜反转",
+		btnClassName: "btn btn-primary",
+		see: true,
+		now: '',
+		list: [
+			{ name:'vue核心1，模板与data数据绑定' },
+			{ name:'vue核心2，指令与数据绑定'},
+			{ name:'vue核心3，指令与html元素与属性绑定'},
+			{ name:'vue核心4，指令与事件与方法绑定，方法操作数据'},
+			{ name:'vue核心5，vue组件是一个拥有预定义选项的vue实例，用来实现项目中一个一个的小功能'},
+			{ name:'vue核心6，vue组件中props是组件数据，用来接收父级的元素,组件中v-bind将组件数据与父元素数据相绑定'}
+		],
+		list2: [
+			{ name:'vue混淆点1，{{模板与data数据绑定不用应用在html属性中}},应该使用v-bind:属性="属性值"'},
+			{ name:'vue混淆点2，过滤器在vue2.0中只能在模板{{}}中使用，在指令绑定中实现同样的行为，应该使用计算属性'}
+		],
+		list3: [
+			{ name:'vue难点1，{{在模板与中使用对数据进行表达式运算，采用computed进行属性的计算,属性计算的目的是为了让原有属性不变，并且能基于原有属性做大量的计算。}}'}
+		],
+		number: 1
+	}
+	var vue = new Vue({
+		el:"#app",
+		data:data,
+		methods: {
+			reverseMessage: function(){
+				this.message = this.message.split('').reverse().join('')
+			},
+			add : function(){
+				this.number = ++this.number;
+				console.log(this.number);
+			},
+			boo :function(){
+				this.see = this.see ? false:true
+			}
+		},
+		filters: {
+			capitalze: function( value, value2, value3 ){
+				if (!value) 
+					return ''
+				value = value.toString()
+				return value.charAt(0).toUpperCase() + value.slice(1)+value2+value3
+			}
+		},
+		computed: {
+			now : function(){
+				return Date.now()
+			},
+			reMessage : function(){
+				return this.message.split('').reverse().join('')
+			}
+		}
+	});
+	</script>
+</body>
+</html>
