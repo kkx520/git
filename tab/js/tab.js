@@ -9,7 +9,6 @@
 	 
 	//定义插件
 	function Plugin( element, options){
-		console.log(element);
 		//将tab赋给tab插件的属性
 		this.element = element;
 		//将tab的jq对象赋给$elem
@@ -43,6 +42,8 @@
 	}
 
 })( window, jQuery);
+
+
 $("#tabs1").tabs({events:"mouseover"});
 $("#tabs2").tabs();
 
